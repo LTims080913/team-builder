@@ -1,23 +1,41 @@
 import React from "react";
 
-const Form = () => {
+const Form = (props) => {
 
 
-return (
-<form>
-    <label>
-        Name: <input id ="name" type ="text" />
-    </label>
+    return (
+        <form onSubmit={props.onAddTeamMember}>
+            <label>Name:
+                <input
+                    onChange={props.onInputChange}
+                    
+                    name="fname"
+                    type="text"
+                />
+            </label>
 
-    <label>
-        Role: <input id ="role" type ="text" />
-    </label>
+            <label>Email:
+                <input 
+                    onChange={props.onInputChange}
+                    
+                    name="email" 
+                    type="text" 
+                />
+            </label>
 
-    <label>
-        Password: <input id ="pass" type ="text" />
-    </label>
-</form>
+            <label>Role:
+                 <input 
+                 onChange={props.onInputChange}
+                 
+                 name="role" 
+                 type="text" />
+            </label><br/>
 
-)}
+            <input type='submit'/>
+        </form>
+
+
+    )
+}
 
 export default Form
